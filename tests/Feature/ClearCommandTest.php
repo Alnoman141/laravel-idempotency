@@ -5,14 +5,14 @@ use Illuminate\Support\Facades\Artisan;
 it('clears all idempotency records', function () {
 
     $store = app(
-        \Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore::class
+        \alnoman141\LaravelIdempotency\Contracts\IdempotencyStore::class
     );
 
     $store->put(
         'abc',
-        new \Alnoman141\LaravelIdempotency\Data\IdempotencyRecord(
+        new \alnoman141\LaravelIdempotency\Data\IdempotencyRecord(
             fingerprint: '123',
-            status: \Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus::Completed,
+            status: \alnoman141\LaravelIdempotency\Enums\IdempotencyStatus::Completed,
             statusCode: 200,
             headers: [],
             body: '{}',
@@ -25,5 +25,4 @@ it('clears all idempotency records', function () {
     expect(
         $store->find('abc')
     )->toBeNull();
-
 });

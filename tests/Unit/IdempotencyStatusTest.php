@@ -1,6 +1,6 @@
 <?php
 
-use Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
+use alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
 
 it('has processing status', function () {
     expect(IdempotencyStatus::Processing->value)

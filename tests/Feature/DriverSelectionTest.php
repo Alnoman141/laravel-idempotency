@@ -1,7 +1,7 @@
 <?php
 
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
-use Alnoman141\LaravelIdempotency\Stores\CacheStore;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
+use alnoman141\LaravelIdempotency\Stores\CacheStore;
 
 it('resolves cache driver', function () {
 
@@ -9,5 +9,4 @@ it('resolves cache driver', function () {
 
     expect(app(IdempotencyStore::class))
         ->toBeInstanceOf(CacheStore::class);
-
 });

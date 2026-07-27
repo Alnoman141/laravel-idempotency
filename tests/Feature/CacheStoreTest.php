@@ -1,8 +1,8 @@
 <?php
 
-use Alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
-use Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
-use Alnoman141\LaravelIdempotency\Stores\CacheStore;
+use alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
+use alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
+use alnoman141\LaravelIdempotency\Stores\CacheStore;
 
 it('stores and retrieves records', function () {
 
@@ -22,5 +22,4 @@ it('stores and retrieves records', function () {
 
     expect($saved)->not->toBeNull();
     expect($saved->body)->toBe('OK');
-
 });

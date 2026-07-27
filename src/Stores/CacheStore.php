@@ -1,18 +1,17 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Stores;
+namespace alnoman141\LaravelIdempotency\Stores;
 
 use Illuminate\Contracts\Cache\Repository;
-use Alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
-use Alnoman141\LaravelIdempotency\Contracts\FlushableStore;
+use alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
+use alnoman141\LaravelIdempotency\Contracts\FlushableStore;
 
 final class CacheStore implements IdempotencyStore, FlushableStore
 {
     public function __construct(
         private readonly Repository $cache,
-    ) {
-    }
+    ) {}
 
     public function flush(): void
     {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Events;
+namespace alnoman141\LaravelIdempotency\Events;
 
 use Illuminate\Foundation\Events\Dispatchable;
 use Symfony\Component\HttpFoundation\Response;

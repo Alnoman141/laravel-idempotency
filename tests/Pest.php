@@ -1,5 +1,5 @@
 <?php
 
-use Alnoman141\LaravelIdempotency\Tests\TestCase;
+use alnoman141\LaravelIdempotency\Tests\TestCase;
 
 uses(TestCase::class)->in('Feature', 'Unit');

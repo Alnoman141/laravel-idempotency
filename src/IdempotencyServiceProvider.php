@@ -1,19 +1,19 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency;
+namespace alnoman141\LaravelIdempotency;
 
 use Illuminate\Support\ServiceProvider;
-use Alnoman141\LaravelIdempotency\Stores\CacheStore;
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
-use Alnoman141\LaravelIdempotency\Locks\CacheLock;
-use Alnoman141\LaravelIdempotency\Support\ResponseStoragePolicy;
-use Alnoman141\LaravelIdempotency\Support\MiddlewareOptions;
-use Alnoman141\LaravelIdempotency\Support\RequestFingerprint;
+use alnoman141\LaravelIdempotency\Stores\CacheStore;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
+use alnoman141\LaravelIdempotency\Locks\CacheLock;
+use alnoman141\LaravelIdempotency\Support\ResponseStoragePolicy;
+use alnoman141\LaravelIdempotency\Support\MiddlewareOptions;
+use alnoman141\LaravelIdempotency\Support\RequestFingerprint;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
-use Alnoman141\LaravelIdempotency\Http\Middleware\IdempotencyMiddleware;
-use Alnoman141\LaravelIdempotency\Contracts\FlushableStore;
+use alnoman141\LaravelIdempotency\Http\Middleware\IdempotencyMiddleware;
+use alnoman141\LaravelIdempotency\Contracts\FlushableStore;
 
 class IdempotencyServiceProvider extends ServiceProvider
 {
@@ -84,7 +84,7 @@ class IdempotencyServiceProvider extends ServiceProvider
         if ($this->app->runningInConsole()) {
 
             $this->commands([
-                \Alnoman141\LaravelIdempotency\Console\ClearIdempotencyCommand::class,
+                \alnoman141\LaravelIdempotency\Console\ClearIdempotencyCommand::class,
             ]);
         }
 

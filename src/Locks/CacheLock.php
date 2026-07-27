@@ -1,10 +1,10 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Locks;
+namespace alnoman141\LaravelIdempotency\Locks;
 
 use Illuminate\Contracts\Cache\Factory as CacheFactory;
 use Illuminate\Contracts\Cache\Lock;
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
 
 class CacheLock implements IdempotencyLock
 {
@@ -12,8 +12,7 @@ class CacheLock implements IdempotencyLock
 
     public function __construct(
         protected CacheFactory $cache
-    ) {
-    }
+    ) {}
 
     public function acquire(string $key): bool
     {
@@ -22,7 +21,7 @@ class CacheLock implements IdempotencyLock
         $this->lock = $this->cache
             ->store()
             ->lock(
-                'idempotency-lock:'.$key,
+                'idempotency-lock:' . $key,
                 $seconds
             );
 

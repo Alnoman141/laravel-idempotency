@@ -29,7 +29,6 @@ it('executes first request', function () {
         ->assertJson([
             'created' => true,
         ]);
-
 });
 
 it('returns the stored response when the same request is repeated', function () {
@@ -55,7 +54,6 @@ it('returns the stored response when the same request is repeated', function () 
 
     expect($second->json())
         ->toEqual($first->json());
-
 });
 
 it('rejects a different request using the same idempotency key', function () {
@@ -79,7 +77,6 @@ it('rejects a different request using the same idempotency key', function () {
         ],
         $headers
     )->assertStatus(409);
-
 });
 
 it('allows requests without an idempotency key', function () {
@@ -90,7 +87,6 @@ it('allows requests without an idempotency key', function () {
 
     $first->assertOk();
     $second->assertOk();
-
 });
 
 it('accepts different idempotency keys', function () {
@@ -110,7 +106,6 @@ it('accepts different idempotency keys', function () {
             'Idempotency-Key' => 'key-2',
         ]
     )->assertOk();
-
 });
 
 it('accepts the same payload after the key has been forgotten', function () {
@@ -126,7 +121,7 @@ it('accepts the same payload after the key has been forgotten', function () {
     )->assertOk();
 
     app(
-        \Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore::class
+        \alnoman141\LaravelIdempotency\Contracts\IdempotencyStore::class
     )->forget('forget-key');
 
     $this->postJson(
@@ -134,5 +129,4 @@ it('accepts the same payload after the key has been forgotten', function () {
         [],
         $headers
     )->assertOk();
-
 });

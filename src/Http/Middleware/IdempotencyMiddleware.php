@@ -1,26 +1,26 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Http\Middleware;
+namespace alnoman141\LaravelIdempotency\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
-use Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
-use Alnoman141\LaravelIdempotency\Support\RequestFingerprint;
-use Alnoman141\LaravelIdempotency\Exceptions\IdempotencyConflictException;
-use Alnoman141\LaravelIdempotency\Exceptions\MissingIdempotencyKeyException;
-use Alnoman141\LaravelIdempotency\Support\ResponseStoragePolicy;
-use Alnoman141\LaravelIdempotency\Support\MiddlewareOptions;
+use alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
+use alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
+use alnoman141\LaravelIdempotency\Support\RequestFingerprint;
+use alnoman141\LaravelIdempotency\Exceptions\IdempotencyConflictException;
+use alnoman141\LaravelIdempotency\Exceptions\MissingIdempotencyKeyException;
+use alnoman141\LaravelIdempotency\Support\ResponseStoragePolicy;
+use alnoman141\LaravelIdempotency\Support\MiddlewareOptions;
 
-use Alnoman141\LaravelIdempotency\Events\IdempotencyStarted;
-use Alnoman141\LaravelIdempotency\Events\IdempotencyCompleted;
-use Alnoman141\LaravelIdempotency\Events\IdempotencyReplayed;
-use Alnoman141\LaravelIdempotency\Events\IdempotencyConflictDetected;
-use Alnoman141\LaravelIdempotency\Events\IdempotencyFailed;
-use Alnoman141\LaravelIdempotency\Support\IdempotencyKeyValidator;
+use alnoman141\LaravelIdempotency\Events\IdempotencyStarted;
+use alnoman141\LaravelIdempotency\Events\IdempotencyCompleted;
+use alnoman141\LaravelIdempotency\Events\IdempotencyReplayed;
+use alnoman141\LaravelIdempotency\Events\IdempotencyConflictDetected;
+use alnoman141\LaravelIdempotency\Events\IdempotencyFailed;
+use alnoman141\LaravelIdempotency\Support\IdempotencyKeyValidator;
 
 final class IdempotencyMiddleware
 {

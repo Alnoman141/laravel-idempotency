@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Response;
-use Alnoman141\LaravelIdempotency\Support\ResponseStoragePolicy;
+use alnoman141\LaravelIdempotency\Support\ResponseStoragePolicy;
 
 it('stores successful responses', function () {
 
@@ -12,7 +12,6 @@ it('stores successful responses', function () {
             new Response([], 201)
         )
     )->toBeTrue();
-
 });
 
 it('does not store server errors', function () {
@@ -24,5 +23,4 @@ it('does not store server errors', function () {
             new Response([], 500)
         )
     )->toBeFalse();
-
 });

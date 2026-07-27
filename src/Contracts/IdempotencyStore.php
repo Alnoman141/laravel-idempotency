@@ -1,8 +1,8 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Contracts;
+namespace alnoman141\LaravelIdempotency\Contracts;
 
-use Alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
+use alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
 
 interface IdempotencyStore
 {

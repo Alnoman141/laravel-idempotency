@@ -1,9 +1,9 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Tests;
+namespace alnoman141\LaravelIdempotency\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
-use Alnoman141\LaravelIdempotency\IdempotencyServiceProvider;
+use alnoman141\LaravelIdempotency\IdempotencyServiceProvider;
 
 abstract class TestCase extends Orchestra
 {

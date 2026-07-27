@@ -1,6 +1,6 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Support;
+namespace alnoman141\LaravelIdempotency\Support;
 
 class MiddlewareOptions
 {

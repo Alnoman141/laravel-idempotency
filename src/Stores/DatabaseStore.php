@@ -1,12 +1,12 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Stores;
+namespace alnoman141\LaravelIdempotency\Stores;
 
-use Alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
-use Alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
-use Alnoman141\LaravelIdempotency\Models\IdempotencyRecordModel;
-use Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
-use Alnoman141\LaravelIdempotency\Contracts\FlushableStore;
+use alnoman141\LaravelIdempotency\Contracts\IdempotencyStore;
+use alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
+use alnoman141\LaravelIdempotency\Models\IdempotencyRecordModel;
+use alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
+use alnoman141\LaravelIdempotency\Contracts\FlushableStore;
 
 class DatabaseStore implements IdempotencyStore, FlushableStore
 {
@@ -61,7 +61,6 @@ class DatabaseStore implements IdempotencyStore, FlushableStore
             ]
 
         );
-
     }
 
     public function forget(string $key): void

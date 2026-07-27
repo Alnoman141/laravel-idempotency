@@ -1,6 +1,6 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Contracts;
+namespace alnoman141\LaravelIdempotency\Contracts;
 
 interface FlushableStore
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Exceptions;
+namespace alnoman141\LaravelIdempotency\Exceptions;
 
 use Exception;
 use Illuminate\Http\JsonResponse;

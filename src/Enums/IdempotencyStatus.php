@@ -1,6 +1,6 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Enums;
+namespace alnoman141\LaravelIdempotency\Enums;
 
 enum IdempotencyStatus: string
 {

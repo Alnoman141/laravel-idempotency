@@ -1,6 +1,6 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Models;
+namespace alnoman141\LaravelIdempotency\Models;
 
 use Illuminate\Database\Eloquent\Model;
 

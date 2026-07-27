@@ -1,9 +1,9 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Console;
+namespace alnoman141\LaravelIdempotency\Console;
 
 use Illuminate\Console\Command;
-use Alnoman141\LaravelIdempotency\Contracts\FlushableStore;
+use alnoman141\LaravelIdempotency\Contracts\FlushableStore;
 
 class ClearIdempotencyCommand extends Command
 {

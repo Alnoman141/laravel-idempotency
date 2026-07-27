@@ -1,8 +1,8 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Data;
+namespace alnoman141\LaravelIdempotency\Data;
 
-use Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
+use alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
 
 final readonly class IdempotencyRecord
 {
@@ -16,8 +16,7 @@ final readonly class IdempotencyRecord
         public array $headers = [],
 
         public ?string $body = null,
-    ) {
-    }
+    ) {}
 
     public function toArray(): array
     {

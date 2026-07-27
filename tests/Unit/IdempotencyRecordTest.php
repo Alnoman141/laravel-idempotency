@@ -1,7 +1,7 @@
 <?php
 
-use Alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
-use Alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
+use alnoman141\LaravelIdempotency\Data\IdempotencyRecord;
+use alnoman141\LaravelIdempotency\Enums\IdempotencyStatus;
 
 it('converts to and from array', function () {
 

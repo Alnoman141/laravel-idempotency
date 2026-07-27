@@ -1,9 +1,7 @@
 <?php
 
-namespace Alnoman141\LaravelIdempotency\Exceptions;
+namespace alnoman141\LaravelIdempotency\Exceptions;
 
 use RuntimeException;
 
-class IdempotencyConflictException extends RuntimeException
-{
-}
+class IdempotencyConflictException extends RuntimeException {}
