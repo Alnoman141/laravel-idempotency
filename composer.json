@@ -1,0 +1,45 @@
+{
+    "name": "Alnoman141/laravel-idempotency",
+    "description": "A robust idempotency and API reliability package for Laravel.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Alnoman141\\LaravelIdempotency\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Alnoman141\\LaravelIdempotency\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.3",
+        "illuminate/contracts": "^13.0",
+        "illuminate/support": "^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^11.0",
+        "pestphp/pest": "^4.7",
+        "pestphp/pest-plugin-laravel": "^4.0"
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test:coverage": "vendor/bin/pest --coverage",
+        "test:parallel": "vendor/bin/pest --parallel"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Alnoman141\\LaravelIdempotency\\IdempotencyServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
