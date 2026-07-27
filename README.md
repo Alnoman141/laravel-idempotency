@@ -33,7 +33,7 @@ A lightweight and configurable Laravel package that provides **Idempotency-Key**
 Install via Composer:
 
 ```bash
-composer require abdullahalnoman/laravel-idempotency
+composer require alnoman141/laravel-idempotency
 ```
 
 ---
@@ -41,7 +41,7 @@ composer require abdullahalnoman/laravel-idempotency
 ## Publish Configuration
 
 ```bash
-php artisan vendor:publish --provider="AbdullahAlNoman\LaravelIdempotency\IdempotencyServiceProvider" --tag=config
+php artisan vendor:publish --provider="alnoman141\LaravelIdempotency\IdempotencyServiceProvider" --tag=config
 ```
 
 This publishes:
@@ -57,7 +57,7 @@ config/idempotency.php
 If you are using the **database** driver:
 
 ```bash
-php artisan vendor:publish --provider="AbdullahAlNoman\LaravelIdempotency\IdempotencyServiceProvider" --tag=migrations
+php artisan vendor:publish --provider="alnoman141\LaravelIdempotency\IdempotencyServiceProvider" --tag=migrations
 ```
 
 Run the migration:
