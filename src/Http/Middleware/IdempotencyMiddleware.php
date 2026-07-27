@@ -193,7 +193,7 @@ final class IdempotencyMiddleware
             return $response;
         } finally {
 
-            $this->lock->release();
+            $this->lock->release($key);
         }
     }
 }

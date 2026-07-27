@@ -8,7 +8,8 @@ use alnoman141\LaravelIdempotency\Contracts\IdempotencyLock;
 
 class CacheLock implements IdempotencyLock
 {
-    protected ?Lock $lock = null;
+    /** @var array<string, Lock> */
+    protected array $locks = [];
 
     public function __construct(
         protected CacheFactory $cache
@@ -18,18 +19,26 @@ class CacheLock implements IdempotencyLock
     {
         $seconds = config('idempotency.lock_timeout', 10);
 
-        $this->lock = $this->cache
+        $lock = $this->cache
             ->store()
             ->lock(
                 'idempotency-lock:' . $key,
                 $seconds
             );
 
-        return $this->lock->get();
+        if (! $lock->get()) {
+            return false;
+        }
+
+        $this->locks[$key] = $lock;
+
+        return true;
     }
 
-    public function release(): void
+    public function release(string $key): void
     {
-        $this->lock?->release();
+        $this->locks[$key]?->release();
+
+        unset($this->locks[$key]);
     }
 }

@@ -85,6 +85,8 @@ class IdempotencyServiceProvider extends ServiceProvider
 
             $this->commands([
                 \alnoman141\LaravelIdempotency\Console\ClearIdempotencyCommand::class,
+                \alnoman141\LaravelIdempotency\Console\StatsCommand::class,
+                \alnoman141\LaravelIdempotency\Console\PruneCommand::class,
             ]);
         }
 
@@ -99,3 +101,4 @@ class IdempotencyServiceProvider extends ServiceProvider
         );
     }
 }
+

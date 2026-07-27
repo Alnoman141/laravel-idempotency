@@ -13,9 +13,17 @@ final class CacheStore implements IdempotencyStore, FlushableStore
         private readonly Repository $cache,
     ) {}
 
+    private const INDEX_KEY = 'idempotency:_index';
+
     public function flush(): void
     {
-        cache()->flush();
+        $index = $this->cache->get(self::INDEX_KEY, []);
+
+        foreach (array_keys($index) as $storageKey) {
+            $this->cache->forget($storageKey);
+        }
+
+        $this->cache->forget(self::INDEX_KEY);
     }
 
     public function find(string $key): ?IdempotencyRecord
@@ -34,18 +42,24 @@ final class CacheStore implements IdempotencyStore, FlushableStore
         IdempotencyRecord $record,
         int $ttl
     ): void {
-        $this->cache->put(
-            $this->storageKey($key),
-            $record->toArray(),
-            $ttl
-        );
+        $storageKey = $this->storageKey($key);
+
+        $this->cache->put($storageKey, $record->toArray(), $ttl);
+
+        $index = $this->cache->get(self::INDEX_KEY, []);
+        $index[$storageKey] = true;
+        $this->cache->forever(self::INDEX_KEY, $index);
     }
 
     public function forget(string $key): void
     {
-        $this->cache->forget(
-            $this->storageKey($key)
-        );
+        $storageKey = $this->storageKey($key);
+
+        $this->cache->forget($storageKey);
+
+        $index = $this->cache->get(self::INDEX_KEY, []);
+        unset($index[$storageKey]);
+        $this->cache->forever(self::INDEX_KEY, $index);
     }
 
     private function storageKey(string $key): string

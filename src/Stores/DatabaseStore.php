@@ -30,6 +30,12 @@ class DatabaseStore implements IdempotencyStore, FlushableStore
             return null;
         }
 
+        if ($record->expires_at !== null && $record->expires_at->isPast()) {
+            $record->delete();
+
+            return null;
+        }
+
         return new IdempotencyRecord(
             fingerprint: $record->fingerprint,
             status: IdempotencyStatus::from($record->status),
