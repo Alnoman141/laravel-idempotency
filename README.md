@@ -41,7 +41,7 @@ composer require alnoman141/laravel-idempotency
 ## Publish Configuration
 
 ```bash
-php artisan vendor:publish --provider="alnoman141\LaravelIdempotency\IdempotencyServiceProvider" --tag=config
+php artisan vendor:publish --provider="alnoman141\LaravelIdempotency\IdempotencyServiceProvider" --tag=idempotency-config
 ```
 
 This publishes:

@@ -67,7 +67,7 @@ class IdempotencyServiceProvider extends ServiceProvider
         $this->publishesMigrations([
             __DIR__ . '/../database/migrations'
             => database_path('migrations'),
-        ]);
+        ], 'migrations');
 
         // Register Middleware Alias
         $this->app
@@ -101,4 +101,3 @@ class IdempotencyServiceProvider extends ServiceProvider
         );
     }
 }
-
